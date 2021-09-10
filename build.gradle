@@ -27,8 +27,17 @@ test {
     useJUnit()
 }
 
+//task hello{
+//    doLast {
+//      println("Hello")
+//    }
+//}
+
 task hello{
-    doLast {
-      println(System.getenv("message"))
+    doLast{
+        if (project.hasProperty("message")) {
+            println "Our input argument with project property ["+project.getProperty("message")+"]"
+        }
+        println "Our input argument with system property ["+System.getProperty("message")+"]"
     }
 }
