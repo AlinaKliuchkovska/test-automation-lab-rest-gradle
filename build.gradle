@@ -35,9 +35,9 @@ test {
 
 task hello{
     doLast{
-        if (project.hasProperty("message")) {
-            println "Our input argument with project property ["+project.getProperty("message")+"]"
-        }
-        println "Our input argument with system property ["+System.getProperty("message")+"]"
+//        if (project.hasProperty("message")) {
+//            println "Our input argument with project property ["+project.getProperty("message")+"]"
+//        }
+        println System.getProperty("message")
     }
 }
