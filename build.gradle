@@ -26,3 +26,9 @@ dependencies {
 test {
     useJUnit()
 }
+
+task hello{
+    doLast {
+      println("Hello")
+    }
+}
