@@ -29,7 +29,7 @@ public class DefinitionSteps {
 
     @Before
     public void setUrl(){
-        RestAssured.baseURI = "http://localhost:9090";
+        RestAssured.baseURI = System.getenv("baseURI");
     }
 
     @When("User creates new author")
