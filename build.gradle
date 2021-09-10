@@ -29,6 +29,6 @@ test {
 
 task hello{
     doLast {
-      println("Hello")
+      println(System.getenv("message"))
     }
 }
