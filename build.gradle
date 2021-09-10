@@ -23,18 +23,6 @@ dependencies {
     implementation "io.rest-assured:rest-assured:4.3.3"
     implementation "junit:junit:4.12"
 }
-
-//dependencies {
-//    testCompile group: 'junit', name: 'junit', version: '4.12'
-//    compile 'org.apache.maven.plugins:maven-compiler-plugin:3.8.0'
-//    compile 'org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M3'
-//    compile 'org.aspectj:aspectjweaver:1.8.10'
-//}
-//
 test {
     useJUnit()
-
-    // set JVM arguments for the test JVM(s)
-//    jvmArgs '-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"\n' +
-//            '                            -Dcucumber.options="--plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"'
 }
