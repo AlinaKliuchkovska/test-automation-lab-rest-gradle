@@ -11,24 +11,32 @@ repositories {
 
 dependencies {
     implementation "org.aspectj:aspectjweaver:1.8.10"
-    implementation "org.junit.jupiter:junit-jupiter-api:5.7.0"
-    implementation "net.serenity-bdd:serenity-core:2.5.8"
-    implementation "net.serenity-bdd:serenity-junit:2.5.8"
-    implementation "net.serenity-bdd:serenity-rest-assured:2.5.8"
-    implementation "io.cucumber:cucumber-java:6.10.4"
     implementation "io.qameta.allure:allure-cucumber-jvm:2.14.0"
-    implementation "io.cucumber:cucumber-junit:6.10.4"
-    implementation "net.serenity-bdd.maven.plugins:serenity-maven-plugin:2.5.8"
     implementation "com.google.code.gson:gson:2.8.6"
     implementation "io.rest-assured:rest-assured:4.3.3"
-    implementation "junit:junit:4.12"
-}
-test {
-    useJUnit()
+    implementation 'org.testng:testng:7.4.0'
+//    implementation 'io.qameta.allure:allure-testng:2.14.0'
+    testImplementation("org.uncommons:reportng:1.1.4")
+    implementation group: 'com.google.inject', name: 'guice', version: '5.0.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
 }
 
-task hello{
-    doLast{
+test {
+    systemProperties((System.getProperties()))
+    useTestNG(){
+        options {
+            listeners << 'org.uncommons.reportng.HTMLReporter'
+            listeners << 'org.uncommons.reportng.JUnitXMLReporter'
+        }
+        useDefaultListeners = false
+        testLogging {
+            events = ['PASSED', 'FAILED', 'SKIPPED']
+        }
+    }
+}
+
+task hello {
+    doLast {
         println System.getProperty("message")
     }
 }
