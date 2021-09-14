@@ -17,8 +17,6 @@ public class ReportAppender extends AbstractAppender {
 
     @Override
     public void append(LogEvent event) {
-//        eventMap.put(Instant.now().toString(), event);
        Reporter.log(event.getMessage().toString());
-        System.out.println("Loggggg " + event.getMessage().toString());
     }
 }

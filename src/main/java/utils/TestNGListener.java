@@ -13,14 +13,11 @@ public class TestNGListener implements ITestListener {
     }
 
     public void onStart(ITestContext result) {
-        System.out.println("trtrtrtr");
         LOG.info("Test suite started" + result.getStartDate() + ",on host: " + result.getHost());
     }
 
     public void onTestFailure(ITestContext result) {
         LOG.error("Test failed: " + result.getName());
-        System.out.println("12345 dgfdfg");
-
     }
 
     public void onTestSkipped(ITestContext result) {
@@ -33,6 +30,5 @@ public class TestNGListener implements ITestListener {
 
     public void onTestSuccess(ITestContext result) {
         LOG.info("Test passed: " + result.getName());
-        System.out.println("5646456 dgfdfg");
     }
 }
