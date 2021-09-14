@@ -28,7 +28,7 @@ dependencies {
 
 test {
     systemProperties(System.getProperties())
-    useTestNG(){
+//    useTestNG(){
 //        options {
 //            listeners << 'utils.TestNGListener'
 //            listeners << 'org.uncommons.reportng.JUnitXMLReporter'
@@ -37,12 +37,13 @@ test {
 //        testLogging {
 //            events = ['PASSED', 'FAILED', 'SKIPPED']
 //        }
-        useTestNG() {
-            useDefaultListeners = true
-            suiteXmlFiles << new File("/testng.xml")
-            setSuiteXmlFiles(suiteXmlFiles)
-        }
+    //}
+    useTestNG() {
+        useDefaultListeners = true
+        suiteXmlFiles << new File("testng.xml")
+        setSuiteXmlFiles(suiteXmlFiles)
     }
+
 }
 
 task hello {

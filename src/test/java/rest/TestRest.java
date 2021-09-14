@@ -17,7 +17,7 @@ public class TestRest {
 
     @BeforeSuite
     public void setUrl(){
-//        RestAssured.baseURI = System.getenv("baseURI");
+    //    RestAssured.baseURI = System.getenv("baseURI");
         RestAssured.baseURI = "http://localhost:9090/";
     }
 

@@ -2,7 +2,7 @@
 
 <suite name="Rest">
     <listeners>
-        <listener class-name="utils.TestNGListener" />
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
     </listeners>
     <test name="shouldBePassed" >
         <classes>
