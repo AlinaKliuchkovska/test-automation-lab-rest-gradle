@@ -21,16 +21,16 @@ dependencies {
     implementation 'org.aspectj:aspectjrt:1.9.8.M1'
     implementation 'org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5'
 //    implementation 'io.qameta.allure:allure-testng:2.14.0'
-//    testImplementation("org.uncommons:reportng:1.1.2") {
-//        exclude group: "org.testng", module: "testng"
-//    }
+    testImplementation("org.uncommons:reportng:1.1.2") {
+        exclude group: "org.testng", module: "testng"
+    }
 }
 
 test {
     systemProperties(System.getProperties())
     useTestNG(){
         options {
-            listeners << 'org.uncommons.reportng.HTMLReporter'
+            listeners << 'utils.TestNGListener'
             listeners << 'org.uncommons.reportng.JUnitXMLReporter'
         }
         useDefaultListeners = false
