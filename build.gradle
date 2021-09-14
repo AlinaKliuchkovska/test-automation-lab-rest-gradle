@@ -29,13 +29,18 @@ dependencies {
 test {
     systemProperties(System.getProperties())
     useTestNG(){
-        options {
-            listeners << 'utils.TestNGListener'
-            listeners << 'org.uncommons.reportng.JUnitXMLReporter'
-        }
-        useDefaultListeners = false
-        testLogging {
-            events = ['PASSED', 'FAILED', 'SKIPPED']
+//        options {
+//            listeners << 'utils.TestNGListener'
+//            listeners << 'org.uncommons.reportng.JUnitXMLReporter'
+//        }
+//        useDefaultListeners = false
+//        testLogging {
+//            events = ['PASSED', 'FAILED', 'SKIPPED']
+//        }
+        useTestNG() {
+            useDefaultListeners = true
+            suiteXmlFiles << new File("/testng.xml")
+            setSuiteXmlFiles(suiteXmlFiles)
         }
     }
 }
