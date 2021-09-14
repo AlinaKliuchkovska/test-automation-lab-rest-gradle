@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="Rest">
-    <listeners>
-        <listener class-name="utils.TestNGListener" />
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name="utils.TestNGListener" />-->
+<!--    </listeners>-->
     <test name="shouldBePassed" >
         <classes>
             <class name="rest.TestRest">

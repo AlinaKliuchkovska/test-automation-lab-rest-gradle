@@ -25,30 +25,30 @@ dependencies {
         exclude group: "org.testng", module: "testng"
     }
 }
-
-task testNG(type: Test) {
-    useTestNG {}
-    reports.html.destination = file("$buildDir/reports/testng")
-}
-
-test {
-    reports.html.destination = file("$buildDir/reports/test")
-    dependsOn testNG
-}
+//
+//task testNG(type: Test) {
+//    useTestNG {}
+//    reports.html.destination = file("$buildDir/reports/testng")
+//}
 //
 //test {
-//    systemProperties(System.getProperties())
-//    useTestNG(){
-////        options {
-////            listeners << 'org.uncommons.reportng.HTMLReporter'
-////            listeners << 'org.uncommons.reportng.JUnitXMLReporter'
-////        }
-////        useDefaultListeners = false
-////        testLogging {
-////            events = ['PASSED', 'FAILED', 'SKIPPED']
-////        }
-//    }
+//    reports.html.destination = file("$buildDir/reports/test")
+//    dependsOn testNG
 //}
+//
+test {
+    systemProperties(System.getProperties())
+    useTestNG(){
+        options {
+            listeners << 'org.uncommons.reportng.HTMLReporter'
+            listeners << 'org.uncommons.reportng.JUnitXMLReporter'
+        }
+        useDefaultListeners = false
+        testLogging {
+            events = ['PASSED', 'FAILED', 'SKIPPED']
+        }
+    }
+}
 
 task hello {
     doLast {
